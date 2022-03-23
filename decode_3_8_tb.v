@@ -3,8 +3,7 @@ reg E_tb;
 reg clka, clkb;
 reg [2:0] In_tb;
 wire [7:0] Out_tb;
-wire clka_out, clkb_out;
-decoder decoder_1(.E(E_tb), .In(In_tb), .Out(Out_tb));
+decoder_3_8 decoder_1(.E(E_tb), .In(In_tb), .Out(Out_tb));
 
 initial begin
 #0 E_tb = 0; In_tb = 3'b000;
@@ -20,6 +19,6 @@ initial begin
 end
 initial begin
 $dumpfile("decoder.vcd");
-$dumpvars(0, decoder_1);
+  $dumpvars(0, decoder_1);
 end
 endmodule
